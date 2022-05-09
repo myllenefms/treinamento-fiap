@@ -22,7 +22,7 @@ function tratarDados(dados){
     $(dados).each(function(index,valor){
         
        let conteudo = `<div class="col-md-4">
-                <div class="card" >
+                <div class="card">
                     <img src="${valor.imagem}" class="card-img-top" onclick="abrirModal('${valor.imagem}', '${valor.nome}', '${valor.descricao}')" alt="tertertert">
                     <div class="card-body">
                     <h5 class="card-title">${valor.nome}</h5>
