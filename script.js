@@ -1,7 +1,5 @@
 
-function pegaDados(){
-    console.log('pega dados funcionando');
-    
+function pegaDados(){    
     
     $.ajax({
         url: "https://iot.14mob.com/lista.json",
@@ -25,11 +23,11 @@ function tratarDados(dados){
         
        let conteudo = `<div class="col-md-4">
                 <div class="card" >
-                    <img src="${valor.imagem}" class="card-img-top" onclick="abrirModal()" alt="tertertert">
+                    <img src="${valor.imagem}" class="card-img-top" onclick="abrirModal('${valor.imagem}', '${valor.nome}', '${valor.descricao}')" alt="tertertert">
                     <div class="card-body">
                     <h5 class="card-title">${valor.nome}</h5>
                     <p class="card-text">${valor.descricao}</p>
-                    <button type="button" class="btn btn-primary abrirModal" onclick="abrirModal('${valor.nome}')" >
+                    <button type="button" class="btn btn-primary" onclick="abrirModal('${valor.imagem}', '${valor.nome}', '${valor.descricao}')" >
                         Detalhes
                     </button>
 
@@ -47,14 +45,14 @@ function tratarDados(dados){
 }
 
 
-function abrirModal(id){
+function abrirModal(imagem, nome, descricao){
 
     let conteudo = `<div class="col-md-12">
                 <div class="card" >
-                    <img src="" class="card-img-top"  alt="tertertert">
+                    <img src="${imagem}" class="card-img-top"  alt="tertertert">
                     <div class="card-body">
-                    <h5 class="card-title">nome</h5>
-                    <p class="card-text">descricao</p>
+                    <h5 class="card-title">${nome}</h5>
+                    <p class="card-text">${descricao}</p>
                 </div>
                 </div>
             </div>`;
